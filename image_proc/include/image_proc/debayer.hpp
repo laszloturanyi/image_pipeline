@@ -51,7 +51,7 @@ class DebayerNode
   : public rclcpp::Node
 {
 public:
-  explicit DebayerNode(const rclcpp::NodeOptions &);
+  explicit DebayerNode(const rclcpp::NodeOptions &, const std::string & = "DebayerNode");
 
 private:
   image_transport::Subscriber sub_raw_;

@@ -49,8 +49,8 @@ namespace image_proc
 
 namespace enc = sensor_msgs::image_encodings;
 
-DebayerNode::DebayerNode(const rclcpp::NodeOptions & options)
-: Node("DebayerNode", options)
+DebayerNode::DebayerNode(const rclcpp::NodeOptions & options, const std::string & node_name)
+: Node(node_name, options)
 {
   auto parameter_change_cb =
     [this](std::vector<rclcpp::Parameter> parameters) -> rcl_interfaces::msg::SetParametersResult

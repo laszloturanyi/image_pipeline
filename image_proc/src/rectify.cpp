@@ -38,14 +38,15 @@
 #include <thread>
 #include <memory>
 #include <vector>
+#include <string>
 
 #include "image_proc/rectify.hpp"
 
 namespace image_proc
 {
 
-RectifyNode::RectifyNode(const rclcpp::NodeOptions & options)
-: Node("RectifyNode", options)
+RectifyNode::RectifyNode(const rclcpp::NodeOptions & options, const std::string & node_name)
+: Node(node_name, options)
 {
   auto parameter_change_cb =
     [this](std::vector<rclcpp::Parameter> parameters) -> rcl_interfaces::msg::SetParametersResult
